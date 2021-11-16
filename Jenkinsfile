@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'npm i -save express' 
-                bat 'make'
+                sh 'npm i -save express' 
+                sh 'make'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
         stage('Test') {
            steps {
-                bat 'npm test'
+                sh 'npm test'
            }
         }
     }
