@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'npm i -save express' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+                archiveArtifacts artifacts: '/target/*.jar', fingerprint: true 
             }
         }
         stage('Test') {
