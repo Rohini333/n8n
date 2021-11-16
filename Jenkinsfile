@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'npm i -save express' 
+                bat 'make'
                 archiveArtifacts artifacts: "$workspace/build/**", fingerprint: true 
             }
         }
